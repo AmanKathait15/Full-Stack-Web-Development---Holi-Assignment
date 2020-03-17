@@ -4,11 +4,80 @@
 	<title>the number game</title>
 	<script type="text/javascript">
 		
+    	var genrated_number = Math.floor(Math.random() * 100 + 1); 
+      	var guesscount=1;
+      	var previous_guess = "Previous Guesses : ";
+
+      	//alert(genrated_number);
+
+      	function play()
+      	{
+      		var guess = document.getElementById("userinput").value; 
+      		
+      		if(guess == genrated_number)
+      		{
+      			display("Congratulation","hey you guess it correctly"); previous_guess+= guess+" ";
+      		}
+      		else if(guess < genrated_number)
+      		{
+      			guesscount--; previous_guess+= guess+" ";
+      			display("Wrong guess","enter some greater value then this");
+      		}
+      		else if(guess > genrated_number)
+      		{
+      			guesscount--; previous_guess+= guess+" ";
+      			display("wrong guess","enter some small value then this");
+      		}
+      		else  display("wrong guess","this is not a number");
+      	}
+      
+      	function display(message,hint)
+      	{
+      		 document.getElementById("message").innerText = message;
+      		 document.getElementById("history").innerText = previous_guess;
+      		 document.getElementById("hint").innerText = hint;
+      	}
+      	
 	</script>
+	<style type="text/css">
+		.main {
+
+			font-style: italic;
+			color: brown;
+			font-size: 25px;
+			text-align: center;
+		}
+		.input {
+
+			color: blue;
+			font-size: 25px;
+			text-align: center;
+		}
+		.output {
+
+			color: red;
+			font-size: 25px;
+		}
+	</style>
 </head>
-<body>
-	<h1 style="background-color: lightyellow; color: black; " >Welcome to the Number Game</h1>
-	<h2><p style=" background-color: lightyellow; color: orange;">In this game you have two show your guessing power . CPU is genrated a random number between 1 to 100 and your task is to guess that number <br> Rule <br> 1: You have given at most 10 chance to guess that number <br>2: if you guess that number correctly you win the game else gameover <br> 3: some hints are also given to help you win the game</p></h2>
-	ENTER YOUR GUESS HERE: <input type="text" name="">
+
+<body style="background-color: lightyellow;">
+	<div class="main">
+		<h1 style="color: black; text-align: center;">Welcome to the Number Game</h1>
+		<p>In this game you have two show your guessing power . CPU is genrated a random number between 1 to 100 and your task is to guess that number. You have given at most 10 chance to guess that number, if you guess that number correctly you win the game else gameover. Some hints are also provide on each guess to help you win the game</p>
+	</div>
+
+	<div class="input">
+		<label >ENTER YOUR GUESS HERE</label> <br>
+		<input type="text" id="userinput"> 
+		<input type="button" value="submit guess" id="click" onclick="play()";>
+		<input type="button" value="restart">
+	</div>
+
+	<div class="output">
+		<p id="history"></p>
+		<p id="message"></p>
+		<p id="hint"></p>
+	</div>
 </body>
 </html>
