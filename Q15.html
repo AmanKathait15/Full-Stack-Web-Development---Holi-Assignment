@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>replace 1st integer with $ .</title>
+	<script type="text/javascript">
+		
+		function replace()
+		{
+			var str = document.getElementById("input1").value;
+			
+			var output = str.replace(/[0-9]/, '$');
+
+			document.getElementById("output").innerText = output;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="input1" placeholder="enter string with atleast one digit">
+	<input type="button" value="replace first integer with $" onclick="replace();">
+	<p id="output"></p>
+</body>
+</html>

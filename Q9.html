@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>replace hash in a string with multiple of 3</title>
+	<script type="text/javascript">
+		
+		function replace()
+		{
+			var str = document.getElementById("input1").value;
+			var i,l=str.length,sum=0,hashpos=-1,output="";
+			var copy=str.split("");
+
+			for(i=0; i<l; i++)
+			{
+				var x = str.charCodeAt(i);
+				if(x>=48 && x<58)	sum+=x-48;
+				else hashpos=i;
+			}
+
+			for(i=0; i<10; i++)
+				if((sum+i)%3==0)
+				{
+					copy[hashpos]=i;
+					output+= copy.join("")+" ";
+				}
+			
+			document.getElementById("output").innerText = output;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="input1" placeholder="enter matrix">
+	<input type="button" value="replace # with multiple of 3" onclick="replace();">
+	<p id="output"></p>
+</body>
+</html>

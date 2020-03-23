@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>longest substring</title>
+	<script type="text/javascript">
+		
+		function longest_substring()
+		{
+			var input = document.getElementById("inputstring").value;
+			var output = "",substr="";
+			var l = input.length;
+			var i=0,j=1;
+			var map = {};
+
+			for(i=0; i<l; i++)
+			{
+				if(!map[input[i]])
+				{
+					substr+=input[i];
+					map[input[i]] = i+1;
+					//console.log(map[input[i]]);
+				}
+				else
+				{
+					//console.log(substr); console.log(map[input[i]]); 
+					i = map[input[i]]-1;
+					if(substr.length>output.length)		output=substr;
+					map = {}; substr="";
+				}
+			}
+			if(substr.length>output.length)		output=substr;
+
+			document.getElementById("output").innerText = output;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="inputstring" placeholder="enter a string">
+	<input type="button" value="print longest substring" onclick="longest_substring();">
+	<p id="output"></p>
+</body>
+</html>

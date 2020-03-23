@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>convert binary to decimal</title>
+	<script type="text/javascript">
+		
+		function convert()
+		{
+			var str = document.getElementById("input1").value;
+			var output = parseInt(str,2);
+			
+			document.getElementById("output").innerText = output;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="input1" placeholder="enter binary number">
+	<input type="button" value="convert to decimal" onclick="convert();">
+	<p id="output"></p>
+</body>
+</html>

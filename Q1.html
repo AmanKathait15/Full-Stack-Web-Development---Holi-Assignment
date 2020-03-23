@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>all combination of string</title>
+	<script type="text/javascript">
+		
+		function combination()
+		{
+			var str = document.getElementById("inputstring").value;
+			var output = "";
+			var l = str.length;
+			for(i=0; i<l; i++)
+			{
+				for(j=i; j<l; j++)
+				output += str.substring(i,j+1) + " ";
+			}
+
+			document.getElementById("output").innerText = output;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="inputstring" placeholder="enter a string">
+	<input type="button" value="print all combination" onclick="combination();">
+	<p id="output"></p>
+</body>
+</html>

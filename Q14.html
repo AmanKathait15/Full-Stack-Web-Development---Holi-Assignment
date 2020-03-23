@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sum of cubes of all integer from 1 to a given integer.</title>
+	<script type="text/javascript">
+		
+		function cube()
+		{
+			var num = document.getElementById("input1").value;
+			var i=1,output = "1 ";
+
+			for(i=2; i<=num; i++)
+			output+= Math.pow(i,3)+" ";
+
+			document.getElementById("output").innerText = output;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="input1" placeholder="enter number">
+	<input type="button" value="show cubes upto enter number" onclick="cube();">
+	<p id="output"></p>
+</body>
+</html>

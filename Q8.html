@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>check identity matrix</title>
+	<script type="text/javascript">
+		
+		function checkidentity()
+		{
+			var matrix = document.getElementById("input1").value.split(" ").map(Number);
+			var i,j=0,n = Math.sqrt(matrix.length),output= true;
+
+			for(i=0; i<n*n; i++)
+			{
+				//console.log(i,j);
+				if(i==(n*j+j))
+				{
+					if(matrix[i]!=1)
+						break;
+					else j++;
+				}
+				else if(matrix[i]!=0)
+					break;
+			}
+			if(i<n*n) output=false;
+			
+			document.getElementById("output").innerText = output;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="input1" placeholder="enter matrix">
+	<input type="button" value="check a matrix is identity or not ?" onclick="checkidentity();">
+	<p id="output"></p>
+</body>
+</html>

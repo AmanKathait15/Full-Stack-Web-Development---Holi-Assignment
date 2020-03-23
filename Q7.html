@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>check a point lie inside a circle or not</title>
+	<script type="text/javascript">
+		
+		function checkinside()
+		{
+			var center = document.getElementById("input1").value.split(" ");
+			var radius = document.getElementById("input2").value;
+			var point = document.getElementById("input3").value.split(" ");
+			//distance formula
+			var dist = Math.sqrt((center[0]-point[0])*(center[0]-point[0])+(center[1]-point[1])*(center[1]-point[1]));
+			var output = (dist<radius);
+			document.getElementById("output").innerText = output;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="input1" placeholder="enter center point of circle">
+	<input type="text" id="input2" placeholder="enter radius ">
+	<input type="text" id="input3" placeholder="enter value of point">
+	<input type="button" value="check enter point lie inside a circle" onclick="checkinside();">
+	<p id="output"></p>
+</body>
+</html>

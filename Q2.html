@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>function name</title>
+	<script type="text/javascript">
+		
+		function what_is_my_name()
+		{
+			console.log(arguments.callee.name);
+			document.getElementById("output").innerText = arguments.callee.name;
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="print function name" onclick="what_is_my_name();">
+	<p id="output"></p>
+</body>
+</html>

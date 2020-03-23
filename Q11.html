@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sum of n natural number less then given value</title>
+	<script type="text/javascript">
+		
+		function maximum()
+		{
+			var str = document.getElementById("input1").value;
+			var n=1,sum=1;
+
+			while(sum<=str)	sum+=++n;
+			
+			document.getElementById("output").innerText = n-1;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="input1" placeholder="enter number">
+	<input type="button" value="find maximum value of n" onclick="maximum();">
+	<p id="output"></p>
+</body>
+</html>

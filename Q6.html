@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>change string</title>
+	<script type="text/javascript">
+		
+		function alter()
+		{
+			var str = document.getElementById("inputstring").value;
+			var output="",i,l=str.length;
+			
+			for(i=0; i<l; i++)
+				output+= String.fromCharCode(122-str.charCodeAt(i) +'a'.charCodeAt(0));
+
+			document.getElementById("output").innerText = output;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="inputstring" placeholder="enter string">
+	<input type="button" value="change alphabet" onclick="alter();">
+	<p id="output"></p>
+</body>
+</html>

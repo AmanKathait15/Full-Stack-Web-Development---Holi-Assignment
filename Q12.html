@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>swap adjacent pair of even length string</title>
+	<script type="text/javascript">
+		
+		function swap()
+		{
+			var str = document.getElementById("input1").value.split("");
+			var i,l=str.length;
+
+			if(l%2!=0)	document.getElementById("output").innerText = "not a even length integer";
+			else
+			{
+				for(i=1; i<l; i++)
+				{
+					var tmp = str[i]; str[i]=str[i-1]; str[i-1]=tmp;
+				}
+
+				document.getElementById("output").innerText = str.join("");
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="input1" placeholder="enter number">
+	<input type="button" value="swap adjacent pairs" onclick="swap();">
+	<p id="output"></p>
+</body>
+</html>
